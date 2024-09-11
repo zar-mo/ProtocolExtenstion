@@ -8,12 +8,25 @@
 import UIKit
 import Combine
 
+
+protocol CounterLabelProtocol {
+    
+    var counterLabel: UILabel! {get set}
+}
+
 protocol ObserveTimerProtocol: AnyObject, CounterLabelProtocol{
     
-    func didCounterUpdated(counter: Int, countries: [String])
+    func didCounterUpdated(counter: Int)
+    func didCountriesLoaded(countries: [String])
 }
 
 class ViewController: UIViewController, ContorlTimerDelegate {
+    
+    func didSelectCountry(country: String) {
+        
+        selectedCountryLabel.text = country
+    }
+    
     
    
     weak var delegate: ObserveTimerProtocol?
@@ -24,15 +37,21 @@ class ViewController: UIViewController, ContorlTimerDelegate {
     var counter: Int = 0
     var secondScreen: SecondScreenVC?
     
+    var didCountriesSet: Bool = false
+    
     var countries: [String] = []
 
+    @IBOutlet weak var selectedCountryLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getCountriesFromPlist()
+        
         setupSecondScreen()
         counterLabel.text = String(counter)
+        getCountriesFromPlist()
         startTimer()
+        selectedCountryLabel.text = ""
+
         
         
     }
@@ -71,11 +90,19 @@ class ViewController: UIViewController, ContorlTimerDelegate {
             if let self = self{
                 self.counter += 1
                 self.counterLabel.text = String(self.counter)
-                self.delegate?.didCounterUpdated(counter: counter, countries: countries)
+                self.delegate?.didCounterUpdated(counter: counter)
                 
+                if self.delegate != nil && !didCountriesSet {
+                    self.delegate?.didCountriesLoaded(countries: countries)
+                    didCountriesSet = true
+                }
+       
             }
         })
+ 
     }
+    
+    
     
     
     func startTimer(){
@@ -97,22 +124,23 @@ class ViewController: UIViewController, ContorlTimerDelegate {
         if let path = path{
             let dict = NSDictionary(contentsOfFile: path)
             countries = dict?.object(forKey: "CountryList") as! [String]
-            
-            print(countries)
-            
-            
+       
         }
     }
+    
+   
 
 
 }
 
+
+// default method
 extension ObserveTimerProtocol{
     
-    func didCounterUpdated(counter: Int, countries: [String]){
+    func didCounterUpdated(counter: Int){
         counterLabel.text = String(counter)
         
-        //counties =  countries
+       
     }
 }
 

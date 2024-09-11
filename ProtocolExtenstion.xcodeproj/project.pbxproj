@@ -16,6 +16,8 @@
 		C9787F022C90DC80006B971C /* SecondScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9787F012C90DC80006B971C /* SecondScreenVC.swift */; };
 		C9787F042C90F025006B971C /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9787F032C90F025006B971C /* Country.swift */; };
 		C9787F062C90F082006B971C /* CountryPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9787F052C90F082006B971C /* CountryPlist.plist */; };
+		C9787F092C910B0F006B971C /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9787F072C910B0F006B971C /* CountryCell.swift */; };
+		C9787F0A2C910B0F006B971C /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9787F082C910B0F006B971C /* CountryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		C9787F012C90DC80006B971C /* SecondScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenVC.swift; sourceTree = "<group>"; };
 		C9787F032C90F025006B971C /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		C9787F052C90F082006B971C /* CountryPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CountryPlist.plist; sourceTree = "<group>"; };
+		C9787F072C910B0F006B971C /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		C9787F082C910B0F006B971C /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				C9787EED2C90D254006B971C /* AppDelegate.swift */,
+				C9787F072C910B0F006B971C /* CountryCell.swift */,
+				C9787F082C910B0F006B971C /* CountryCell.xib */,
 				C9787F012C90DC80006B971C /* SecondScreenVC.swift */,
 				C9787F032C90F025006B971C /* Country.swift */,
 				C9787F052C90F082006B971C /* CountryPlist.plist */,
@@ -134,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9787F0A2C910B0F006B971C /* CountryCell.xib in Resources */,
 				C9787F062C90F082006B971C /* CountryPlist.plist in Resources */,
 				C9787EF72C90D256006B971C /* Assets.xcassets in Resources */,
 				C9787EFA2C90D256006B971C /* Base in Resources */,
@@ -150,6 +157,7 @@
 			files = (
 				C9787F022C90DC80006B971C /* SecondScreenVC.swift in Sources */,
 				C9787EF22C90D254006B971C /* ViewController.swift in Sources */,
+				C9787F092C910B0F006B971C /* CountryCell.swift in Sources */,
 				C9787EEE2C90D254006B971C /* AppDelegate.swift in Sources */,
 				C9787F042C90F025006B971C /* Country.swift in Sources */,
 				C9787EF02C90D254006B971C /* SceneDelegate.swift in Sources */,
